@@ -59,6 +59,19 @@ fn main(){
     let country4 = String::from("Korea");
     print_country(country4); // country4의 소유권을 이동하지 않고, 참조를 통해 값을 가져온다. -> 소유권 이동이 일어나지 않음
     print_country(country4); // country4는 여전히 사용할 수 있다. -> 소유권 이동이 일어나지 않았기 때문에, country4는 여전히 유효하다.
+
+
+    // 강의 공부 내용(여기부터)
+    let my_name= "David";
+    println!("My name is {} and my age is {}", my_name, give_age());
+
+    let my_city= "California";
+    let year = 2025;
+    let population = "1억 2천";
+    
+    println!("이곳은 {my_city}이고, {year}년 기준 : 인구수는 {population}입니다.");
+
+    print_number(9,8);
 }
 
 // 함수에도 적용가능한 r#
@@ -69,4 +82,15 @@ fn r#return() -> u8{
 
 fn print_country(country: &str){
     println!("Country: {}", country);
+}
+
+
+fn give_age() -> i32 {
+    return 42
+}
+
+fn print_number(one:i32,two:i32){
+    let multi = one * two;
+    
+    println!("{}",multi);
 }
